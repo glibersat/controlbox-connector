@@ -1,3 +1,10 @@
+from construct import (
+    Adapter,
+    Byte,
+    RepeatUntil
+)
+
+
 class VariableLengthIDAdapter(Adapter):
     """
     Controlbox Variable Length ID
