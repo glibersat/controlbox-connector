@@ -73,8 +73,10 @@ loop.create_task(controller.process_messages())
 
 For example, you'll want to integrate Controlbox commands into a REST paradigm.
 
-For that, make your controller accessible somewhere (let's suppose here it is
-globally available) and do it like this:
+We want to list our objects by doing a GET on `http://some.where/controller/objects`.
+
+For that, make your `controller` object accessible somewhere (let's suppose here
+it is globally available) and do it like this:
 
 ```python
 async def list_objects(request):
