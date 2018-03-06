@@ -14,7 +14,7 @@ from .commands import (
 
 class ResponseDecoder:
     """
-    Try to decode a sequence of bytes and make objects
+    Try to decode a sequence of bytes and make matching python objects
     """
     def from_bytes(self, msg : bytes):
         from binascii import hexlify

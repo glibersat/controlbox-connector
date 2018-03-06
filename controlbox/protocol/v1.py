@@ -1,3 +1,5 @@
+from .abstract import ControlboxProtocol
+
 from .decoder import ResponseDecoder
 
 from .commands import (
@@ -6,7 +8,11 @@ from .commands import (
     ReadValueCommandResponse
 )
 
-class ProtocolV1:
+class ProtocolV1(ControlboxProtocol):
+    """
+    First protocol version, mostly as described by Matt in:
+    https://github.com/ctlbox/controlbox-cpp/blob/develop/docs/controlbox.rst
+    """
     decoder = ResponseDecoder()
 
     command_mapping = {

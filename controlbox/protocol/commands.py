@@ -1,3 +1,7 @@
+"""
+This is where Controlbox request message descriptions reside.
+Using construct, we let le library build the byte flow for us.
+"""
 import logging
 
 from construct import *

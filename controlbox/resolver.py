@@ -11,6 +11,11 @@ class RequestResponseMatcher:
 
 
 class RequestResponseResolver:
+    """
+    A Resolver matches an unresolved Request with a future Response.
+    Once a match is found, the Request is resolved so the callers can get the result
+    received from the controller device
+    """
     def __init__(self, aRequestResponseMatcher):
         self._request_queue = {}
         self._matcher = aRequestResponseMatcher

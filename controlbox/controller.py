@@ -39,6 +39,10 @@ class SimpleVirtualController:
 
 
 class Controller:
+    """
+    A Controller represents a physical device that implements a protocol
+    and communicates using a Conduit (e.g. TCP/IP, Serial port, ...).
+    """
     def __init__(self, aConduit, aProtocol=ProtocolV1()):
         self.conduit = aConduit
         self.resolver = RequestResponseResolver(ControlboxCommandMatcher)
@@ -62,7 +66,8 @@ class Controller:
 
         bytes_to_send = codecs.encode(aCommand, "hex")
 
-        # Add this command to resolver so make sure we catch reply if it's quick
+        # Add this command to resolver to make sure we catch reply if the
+        # controller is quick to respond
         future = self.resolver.queue_request(aCommand)
 
         # Send the bytes on wire
