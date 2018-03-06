@@ -1,8 +1,6 @@
-Controlbox AsyncIO communcation library
-==================================================
+# Controlbox AsyncIO communcation library
 
-Scope
------
+## Scope
 
 The goal is to Provide an asynchronous library for controlbox
 developers so they just have to write 3rd-party codecs that implement their
@@ -22,11 +20,9 @@ end-users without the need of a deep understanding of the controlbox protocol.
 This is not meant to be used directly by protocol integrators: you should
 provide your own library/module based on this one.
 
-Sample usage
---------------
+## Sample usage
 
-Providing codecs
-~~~~~~~~~~~~~~~~
+### Providing codecs
 
 This part should be written in your protocol library/module.
 
@@ -42,8 +38,7 @@ controlbox.register_object_types(MeteorologyObjectTypeEnum)
 ```
 
 
-Communicating with a controller
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Communicating with a controller
 
 Connecting to a controller:
 
@@ -59,7 +54,7 @@ controller = Controller(conduit=conduit)
 controller.connect()
 ```
 
-Send messages:
+Send commands:
 
 ```python
 from controlbox.commands import ListObjectsCommandRequest
@@ -74,8 +69,7 @@ Let messages be processed:
 loop.create_task(controller.process_messages())
 ```
 
-Integrating into a software
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Integrating into a end-user software
 
 For example, you'll want to integrate Controlbox commands into a REST paradigm.
 
